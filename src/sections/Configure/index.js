@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Helmet } from "react-helmet";
 import OutlineButton from "../../components/Button";
 
-const Configure = () => {
+const Configure = forwardRef((props, ref) => {
   return (
-    <header className="max-w-[1920px] mx-auto">
+    <header ref={ref} className="max-w-[1920px] mx-auto">
       <Helmet>
         <title>Get the Sun to power your home</title>
         <meta name="description" content="All the power that you need for your house is now available" />
@@ -48,6 +48,6 @@ const Configure = () => {
       </section>
     </header>
   );
-};
+});
 
 export default Configure;

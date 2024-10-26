@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Helmet } from 'react-helmet';
 
-const Products = () => {
+const Products = forwardRef((props, ref) => {
   return (
-    <main className="max-w-[1920px] mx-auto">
+    <main ref={ref} className="max-w-[1920px] mx-auto">
       <Helmet>
         <title>Pick the Sun</title>
         <meta
@@ -38,6 +38,6 @@ const Products = () => {
       </figure>
     </main>
   );
-};
+});
 
 export default Products;

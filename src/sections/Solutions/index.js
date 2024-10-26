@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Helmet } from "react-helmet";
 
-const Solutions = () => {
+const Solutions = forwardRef((props, ref) => {
   return (
-    <main className="max-w-[1920px] mx-auto">
+    <main ref={ref} className="max-w-[1920px] mx-auto">
       <Helmet>
         <title>Powerful features</title>
         <meta
@@ -60,13 +60,13 @@ const Solutions = () => {
         <figure className="flex justify-end order-2 md:order-2">
           <img 
             src="Rectangle-Mobile2.png" 
-            alt="Rectangle-Mobile" 
+            alt="Descrição da imagem" 
             className="w-full md:max-w-xl max-w-[344px]" 
           />
         </figure>
       </section>
     </main>
   );
-};
+});
 
 export default Solutions;

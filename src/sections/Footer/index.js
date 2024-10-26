@@ -1,6 +1,6 @@
-import React from "react";
+import React,{forwardRef} from "react";
 
-const Footer = () => {
+const Footer = forwardRef((props, ref) => {
   return (
     <footer className="max-w-[1920px] mx-auto">
       <section className="flex flex-col md:flex-row justify-between items-center md:items-start px-10 md:px-20 py-8 text-center md:text-left">
@@ -17,6 +17,6 @@ const Footer = () => {
       </section>
     </footer>
   );
-};
+});
 
 export default Footer;

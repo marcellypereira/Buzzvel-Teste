@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import OutlineButton from "./Button";
-import Modal from "./modal";
+import Modal from "./Modal";
 
-export default function Header() {
-
+export default function Header({ scrollToSection, products, solutions, services, configure }, ref) {
+  const navItems = [
+    { label: "Products", ref: products },
+    { label: "Solutions", ref: solutions },
+    { label: "Services", ref: services },
+    { label: "Configure", ref: configure },
+  ];
+  
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -14,6 +20,7 @@ export default function Header() {
   const handleCloseModal = () => {
     setModalOpen(false);
   };
+
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       <nav
@@ -27,26 +34,24 @@ export default function Header() {
             </a>
           </h1>
           <ul className="flex items-center gap-x-8">
-            <li className="hidden lg:block">
-              <a href="#" className="text-[#0F172A] text-base font-medium hover:text-[#581C87]">
-                Products
-              </a>
-            </li>
-            <li className="hidden lg:block">
-              <a href="#" className="text-[#0F172A] text-base font-medium hover:text-[#581C87]">
-                Solutions
-              </a>
-            </li>
-            <li className="hidden lg:block">
-              <a href="#" className="text-[#0F172A] text-base font-medium hover:text-[#581C87]">
-                Services
-              </a>
-            </li>
-            <li className="hidden lg:block">
-              <a href="#" className="text-[#0F172A] text-base font-medium hover:text-[#581C87]">
-                Configure
-              </a>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.label} className="hidden lg:block">
+                <a
+                  href="#"
+                  className="text-[#0F172A] text-base font-medium hover:text-[#581C87]"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (item.ref.current) {
+                      scrollToSection(item.ref);
+                    } else {
+                      console.warn("Reference is null for:", item.label);
+                    }
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 

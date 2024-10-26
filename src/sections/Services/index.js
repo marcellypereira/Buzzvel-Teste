@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Helmet } from 'react-helmet';
 
-const Services = () => {
+const Service = forwardRef((props, ref) => {
   return (
-    <main className="max-w-[1920px] mx-auto">
+    <main ref={ref} className="max-w-[1920px] mx-auto">
       <Helmet>
         <title>Personalized Services</title>
         <meta 
@@ -17,7 +17,7 @@ const Services = () => {
         <figure className="lg:max-w-xl md:max-w-xl max-w-[344px] flex justify-center order-2 md:order-1">
           <img 
             src="Rectangle-Mobile1.png" 
-            alt="Rectangle-Mobile1" 
+            alt="Descrição da imagem" 
             className="w-full" 
           />
         </figure>
@@ -68,6 +68,6 @@ const Services = () => {
       </section>
     </main>
   );
-};
+});
 
-export default Services;
+export default Service;

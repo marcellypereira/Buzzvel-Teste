@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, forwardRef } from "react";
 import { Helmet } from "react-helmet";
 import OutlineButton from "../../components/Button";
 
-const SunCollectors = () => {
+const Harvesters = forwardRef((props, ref) => {
   const carouselRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -158,6 +158,6 @@ const SunCollectors = () => {
       </div>
     </main>
   );
-};
+});
 
-export default SunCollectors;
+export default Harvesters;

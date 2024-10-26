@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Helmet } from 'react-helmet';
 import OutlineButton from "../../components/Button";
 
-const Hero = () => {
+const Hero = forwardRef((props, ref) => {
   return (
-    <header className="max-w-[1920px] mx-auto relative">
+    <header ref={ref} className="max-w-[1920px] mx-auto relative">
       <Helmet>
         <title>Get the Sun to Power Your Home</title>
         <meta name="description" content="Viverra viverra nibh enim et aliquam, enim. Tempor, sit mus viverra orci dui consequat turpis scelerisque." />
@@ -38,12 +38,12 @@ const Hero = () => {
 
         <aside className="flex justify-end lg:mt-0 order-1 lg:order-2 md:order-2">
           <div className="max-w-3xl w-full">
-            <img src="image.png" alt="Imagem" className="w-full h-auto lg:max-w-full" />
+            <img src="image.png" alt="Imagem Solar" className="w-full h-auto lg:max-w-full" />
           </div>
         </aside>
       </main>
     </header>
   );
-};
+});
 
 export default Hero;
