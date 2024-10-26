@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import Configure from './sections/Configure/index.js';
 import Hero from './sections/Hero';
 import Products from './sections/Products.js';
 import Services from './sections/Services/index.js';
@@ -15,6 +16,7 @@ function App() {
       <Services />
       <Solutions />
       <SunCollectors />
+      <Configure />
     </>
   );
 }
