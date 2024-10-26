@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './sections/Footer/Footer.js';
 import Header from './components/Header';
 import Configure from './sections/Configure/index.js';
 import Hero from './sections/Hero';
@@ -17,6 +18,7 @@ function App() {
       <Solutions />
       <SunCollectors />
       <Configure />
+      <Footer />
     </>
   );
 }
