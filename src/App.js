@@ -4,6 +4,7 @@ import Hero from './sections/Hero';
 import Products from './sections/Products.js';
 import Services from './sections/Services/index.js';
 import Solutions from './sections/Solutions/index.js';
+import SunCollectors from './sections/SunCollectors/index.js';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Products />
       <Services />
       <Solutions />
+      <SunCollectors />
     </>
   );
 }
