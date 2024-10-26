@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './sections/Hero';
 import Products from './sections/Products.js';
 import Services from './sections/Services/index.js';
+import Solutions from './sections/Solutions/index.js';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Products />
       <Services />
+      <Solutions />
     </>
   );
 }
