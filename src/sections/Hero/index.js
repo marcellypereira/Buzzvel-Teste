@@ -38,7 +38,7 @@ const Hero = () => {
 
         <aside className="flex justify-end lg:mt-0 order-1 lg:order-2 md:order-2">
           <div className="max-w-3xl w-full">
-            <img src="image.png" alt="Imagem Solar" className="w-full h-auto lg:max-w-full" />
+            <img src="image.png" alt="Imagem" className="w-full h-auto lg:max-w-full" />
           </div>
         </aside>
       </main>
