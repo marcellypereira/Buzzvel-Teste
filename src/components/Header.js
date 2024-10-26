@@ -1,8 +1,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import OutlineButton from "./Button";
+import Modal from "./modal";
 
 export default function Header() {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       <nav
@@ -47,7 +58,12 @@ export default function Header() {
             <img src="Vector.png" alt="Contact icon" />
             <p className="text-base text-[#0369A1]">55 818 282</p>
           </div>
-          <OutlineButton text="Request a Quote" variant="primary" />
+          <OutlineButton
+            text="Request a Quote"
+            variant="primary"
+            onClick={handleOpenModal}
+          />
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
         </div>
       </nav>
     </header>
