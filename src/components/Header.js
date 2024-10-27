@@ -24,16 +24,16 @@ export default function Header({ scrollToSection, products, solutions, services,
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       <nav
-        className="max-w-[1920px] mx-auto p-4 flex justify-between items-center"
+        className="mx-auto p-4 flex justify-between items-center"
         aria-label="Main Navigation"
       >
-        <div className="flex items-center">
+        <div className="flex items-center lg:ml-20 md:ml-20">
           <h1 className="text-black text-3xl font-bold mr-8">
             <a href="#" aria-label="">
               soller
             </a>
           </h1>
-          <ul className="flex items-center gap-x-8">
+          <ul className="flex items-center gap-x-7">
             {navItems.map((item) => (
               <li key={item.label} className="hidden lg:block">
                 <a
@@ -55,9 +55,9 @@ export default function Header({ scrollToSection, products, solutions, services,
           </ul>
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 mr-20">
           <div
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 ml-6"
             aria-label="Contact Information"
           >
             <img src="Vector.png" alt="Contact icon" />

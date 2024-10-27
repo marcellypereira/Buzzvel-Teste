@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const Service = forwardRef((props, ref) => {
   return (
-    <main ref={ref} className="max-w-[1920px] mx-auto">
+    <main ref={ref} className="mx-auto">
       <Helmet>
         <title>Personalized Services</title>
         <meta 
@@ -22,12 +22,12 @@ const Service = forwardRef((props, ref) => {
           />
         </figure>
 
-        <div className="flex flex-col lg:text-start md:text-start text-center px-4 order-1 md:order-2">
+        <div className="flex flex-col lg:text-start md:text-start text-center order-1 md:order-2 lg:mr-20 md:mr-20 px-4">
           <header>
             <p className="text-lg sm:text-xl text-[#D97706] leading-9 font-medium mt-6 lg:mt-10">
               Services
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] mt-4 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#0F172A] mt-4 mb-6">
               Personalized Services
             </h1>
           </header>
@@ -38,14 +38,14 @@ const Service = forwardRef((props, ref) => {
             </p>
           </article>
 
-          <section className="grid grid-rows-2 grid-flow-col gap-12 items-stretch mt-36">
+          <section className="grid grid-rows-2 grid-flow-col lg:gap-12 md:gap-12 gap-4 items-stretch mt-36">
             <article>
               <h2 className="text-[#0F172A] text-2xl font-bold">Et mauris</h2>
               <p className="text-[#0F172A] text-lg mt-4 font-normal">
                 Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.
               </p>
             </article>
-            <article>
+            <article className='mt-20 lg:mt-0 md:mt-0'>
               <h2 className="text-[#0F172A] text-2xl font-bold">Imperdiet pellentesque</h2>
               <p className="text-[#0F172A] text-lg mt-4 font-normal">
                 Platea arcu dapibus non magna cursus lectus id sollicitudin. Enim viverra parturient tristique nulla.
@@ -57,7 +57,7 @@ const Service = forwardRef((props, ref) => {
                 Sit bibendum donec dolor fames neque vulputate non sit aliquam. Consequat turpis natoque leo, massa.
               </p>
             </article>
-            <article>
+            <article className='mt-20 lg:mt-0 md:mt-0'>
               <h2 className="text-[#0F172A] text-2xl font-bold">Non libero</h2>
               <p className="text-[#0F172A] text-lg mt-4 font-normal">
                 Congue mauris sem vel, urna viverra. Urna, nibh leo suscipit purus ut sed eros, consectetur viverra.

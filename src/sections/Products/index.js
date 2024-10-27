@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 const Products = forwardRef((props, ref) => {
   return (
-    <main ref={ref} className="max-w-[1920px] mx-auto">
+    <main ref={ref} className="mx-auto">
       <Helmet>
         <title>Pick the Sun</title>
         <meta
@@ -17,7 +17,7 @@ const Products = forwardRef((props, ref) => {
         <p className="text-lg sm:text-xl text-[#D97706] leading-9 font-medium mt-6 lg:mt-10">
           No more waste
         </p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] mt-4 mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#0F172A] mt-4 mb-6">
           Pick the Sun
         </h1>
         <article className="lg:max-w-[900px] lg:mx-auto mx-6 font-normal">

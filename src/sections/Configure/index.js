@@ -4,7 +4,7 @@ import OutlineButton from "../../components/Button";
 
 const Configure = forwardRef((props, ref) => {
   return (
-    <header ref={ref} className="max-w-[1920px] mx-auto">
+    <header ref={ref} className="lg:bg-[#7E22CE] md:bg-[#7E22CE] bg-[#581C87] mx-auto">
       <Helmet>
         <title>Get the Sun to power your home</title>
         <meta name="description" content="All the power that you need for your house is now available" />
@@ -14,7 +14,7 @@ const Configure = forwardRef((props, ref) => {
         <div className="flex flex-col lg:flex-row-reverse md:flex-row-reverse">
           <div className="flex flex-col items-center lg:justify-center">
             <figure className="lg:flex md:flex lg:items-center md:items-center lg:justify-center md:justify-center relative">
-              <img src="Ellipse1.png" alt="Imagem ilustrativa" className="hidden lg:block md:block w-[790px]" />
+              <img src="Ellipse1.png" alt="Imagem ilustrativa" className="hidden lg:block md:block" />
               <div className="lg:absolute md:absolute hidden md:flex flex-col items-center justify-center">
                 <OutlineButton text="Request a Quote" variant="secondary" />
                 <p className="mt-2 text-center text-[#FFFFFF] font-normal">Egestas fringilla aliquam leo</p>
@@ -26,19 +26,19 @@ const Configure = forwardRef((props, ref) => {
             <p className="text-base md:text-lg lg:text-xl text-[#FCD34D] leading-8 md:leading-9 font-medium mt-4">
               Get the Sun to power your home
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#FFFFFF] mb-6 lg:max-w-[775px] md:max-w-[574px] max-w-[358px] mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl lg:font-extrabold md:font-extrabold font-bold text-[#FFFFFF] mb-6 lg:max-w-[775px] md:max-w-[574px] max-w-[358px] mx-auto">
               All the power that you need for your house is now available
             </h1>
             <div className="flex flex-col items-center justify-center mt-4 md:hidden">
               <OutlineButton text="Request a Quote" variant="secondary" />
-              <p className="mt-2 text-center text-[#FFFFFF] font-normal">Egestas fringilla aliquam leo</p>
+              <p className="lg:mt-2 lg:mt-2 mt-4 lg:mb-0 md:mb-0 mb-16 text-center text-[#FFFFFF] font-normal">Egestas fringilla aliquam leo</p>
             </div>
           </div>
         </div>
 
         <div className="relative flex items-center justify-center">
           <figure className="lg:-mt-24 md:-mt-22 lg:mb-0 md:mb-0 -mb-44">
-            <img src="Macbook.png" alt="Ilustração de um MacBook" />
+            <img src="Macbook.png" alt="Ilustração de um MacBook" className="w-full object-cover"/>
           </figure>
         </div>
 
