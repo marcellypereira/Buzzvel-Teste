@@ -172,7 +172,7 @@ const SunCollectors = forwardRef((props, ref) => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#FFFFFF] mt-4 mb-6">Make something awesome</h1>
           </header>
           <article className="font-normal">
-            <p className="text-xl text-[#FFFFFF] max-w-[814px]">Dui euismod iaculis libero, aliquet vitae et elementum porttitor. Eleifend mi tristique condimentum congue fusce nunc, donec magnis commodo.</p>
+            <p className="lg:text-xl md:text-xl text-base text-[#FFFFFF] max-w-[814px]">Dui euismod iaculis libero, aliquet vitae et elementum porttitor. Eleifend mi tristique condimentum congue fusce nunc, donec magnis commodo.</p>
           </article>
         </div>
         <div className="mt-10 lg:mt-0 flex justify-center lg:justify-start lg:flex-none">

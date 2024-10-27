@@ -24,7 +24,7 @@ const Solutions = forwardRef((props, ref) => {
           </header>
 
           <article className="font-normal">
-            <p className="text-xl text-[#0F172A]">
+            <p className="lg:text-xl md:text-xl text-base text-[#0F172A]">
               Pretium lectus ultrices sit tempor, sit ullamcorper volutpat et et. Auctor turpis semper id sit ornare maecenas lectus sed.
             </p>
           </article>

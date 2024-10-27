@@ -15,7 +15,7 @@ const Hero = forwardRef((props, ref) => {
           <h1 className="lg:text-7xl lg:font-extrabold md:font-extrabold font-bold leading-tight max-w-[343px] mx-auto text-[40px] md:text-4xl md:max-w-none text-[#0F172A]">
             Get the Sun to Power Your Home
           </h1>
-          <p className="lg:text-2xl font-normal mt-4 lg:mt-8 max-w-[343px] lg:max-w-none text-[18px] text-[#0F172A]">
+          <p className="lg:text-2xl md:text-2xl font-normal mt-4 lg:mt-8 max-w-[343px] lg:max-w-none text-lg text-[#0F172A]">
             Viverra viverra nibh enim et aliquam, enim. Tempor, sit mus viverra orci dui consequat turpis scelerisque.
           </p>
           <div className="lg:pt-6 pt-4">

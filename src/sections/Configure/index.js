@@ -22,7 +22,7 @@ const Configure = forwardRef((props, ref) => {
             </figure>
           </div>
 
-          <div className="px-4 lg:text-left md:text-left mx-auto w-full lg:w-auto mt-10 mt-0.5 text-center">
+          <div className="flex flex-col justify-center px-4 lg:text-left md:text-left mx-auto w-full lg:w-auto mt-0 text-center">
             <p className="text-base md:text-lg lg:text-xl text-[#FCD34D] leading-8 md:leading-9 font-medium mt-4">
               Get the Sun to power your home
             </p>
@@ -31,14 +31,14 @@ const Configure = forwardRef((props, ref) => {
             </h1>
             <div className="flex flex-col items-center justify-center mt-4 md:hidden">
               <OutlineButton text="Request a Quote" variant="secondary" />
-              <p className="lg:mt-2 lg:mt-2 mt-4 lg:mb-0 md:mb-0 mb-16 text-center text-[#FFFFFF] font-normal">Egestas fringilla aliquam leo</p>
+              <p className="lg:mt-2 mt-4 mb-16 text-center text-[#FFFFFF] font-normal">Egestas fringilla aliquam leo</p>
             </div>
           </div>
         </div>
 
         <div className="relative flex items-center justify-center">
           <figure className="lg:-mt-24 md:-mt-22 lg:mb-0 md:mb-0 -mb-44">
-            <img src="Macbook.png" alt="Ilustração de um MacBook" className="w-full object-cover"/>
+            <img src="Macbook.png" alt="Ilustração de um MacBook" className="pt-8 w-full object-cover"/>
           </figure>
         </div>
 
