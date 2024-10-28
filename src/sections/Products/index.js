@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { forwardRef } from 'react';
 import { Helmet } from 'react-helmet';
+import { motion } from "framer-motion";
+import { fadeIn } from "../../Variants";
 
 const Products = forwardRef((props, ref) => {
   return (
@@ -13,7 +15,12 @@ const Products = forwardRef((props, ref) => {
         />
       </Helmet>
 
-      <section className="mt-20 lg:mt-40 text-center px-4">
+      <motion.section 
+        variants={fadeIn("left",0.30)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{once: true, amount: 0.7}}
+        className="mt-20 lg:mt-40 text-center px-4">
         <p className="text-lg sm:text-xl text-[#D97706] leading-9 font-medium mt-6 lg:mt-10 md:mt-10">
           No more waste
         </p>
@@ -27,7 +34,7 @@ const Products = forwardRef((props, ref) => {
             sollicitudin.
           </p>
         </article>
-      </section>
+      </motion.section>
 
       <figure className="lg:mt-0">
         <img

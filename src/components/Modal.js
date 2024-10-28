@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiAlertCircle } from "react-icons/fi";
+import { useEffect } from "react";
 
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
@@ -16,48 +18,52 @@ const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] overflow-x-hidden overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center animate-fade-in">
-      <div className="bg-white shadow-sm rounded-xl w-[full] sm:max-w-lg flex flex-col transform pointer-events-auto animate-slide-up">
-        <div className="flex justify-between items-center py-3 px-4 border-b border-[#e7e7e7]">
-          <img src="soller.png" alt="" />
-          <button
-            type="button"
-            className=""
-            onClick={onClose}
-            aria-label="Close"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="bg-[slate-900/20] backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
+        >
+          <motion.div
+            initial={{ scale: 0, rotate: "12.5deg" }}
+            animate={{ scale: 1, rotate: "0deg" }}
+            exit={{ scale: 0, rotate: "0deg" }}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-[#581C87] text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
           >
-            <svg
-              className="shrink-0 w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </button>
-        </div>
-        <div className="p-4 overflow-y-auto">
-          <p className="mt-1 text-[#475569]">
-            Quote requested successfully! Our team is analyzing it and you will
-            receive information shortly.
-          </p>
-        </div>
-        <div className="flex justify-end items-center gap-x-2 py-3 px-4">
-          <button
-            type="button"
-            className="rounded-md py-2 px-4 font-medium text-[#475569] hover:text-[#FFFFFF] hover:bg-[#581C87] hover:shadow-lg hover:shadow-[#581C87]/50"
-            onClick={onClose}
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
+            <FiAlertCircle className="text-white/10 rotate-12 text-[250px] absolute z-0 -top-24 -left-24" />
+            <div className="relative z-10">
+              <div className="bg-white w-16 h-16 mb-2 rounded-full text-3xl text-[#581C87] grid place-items-center mx-auto">
+                <FiAlertCircle />
+              </div>
+              <h3 className="text-3xl font-bold text-center mb-2">
+                Requested quotation!
+              </h3>
+              <p className="text-center mb-6">
+                I would like to confirm that you have received the quote. Your response is essential for us to move forward.
+              </p>
+              <div className="flex gap-2">
+                <button
+                  onClick={onClose}
+                  className="bg-transparent hover:bg-white/10 transition-colors text-white font-semibold w-full py-2 rounded"
+                >
+                  No, I haven't 
+                </button>
+                <button
+                  onClick={onClose}
+                  className="bg-white hover:opacity-90 transition-opacity text-[#581C87] font-semibold w-full py-2 rounded"
+                >
+                  Yes, I received it
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

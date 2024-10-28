@@ -9,6 +9,7 @@ import Configure from "./sections/Configure";
 import Hero from "./sections/Hero";
 import SunCollectors from "./sections/SunCollectors";
 import Footer from "./sections/Footer";
+import { LayoutGroup } from "framer-motion"
 
 function App() {
   const products = useRef(null);
@@ -37,13 +38,15 @@ function App() {
         services={services}
         configure={configure}
       />
+      <LayoutGroup>
       <Hero />
-      <Products ref={products} />
-      <Service ref={services} />
-      <Solutions ref={solutions} />
-      <SunCollectors />
-      <Configure ref={configure} />
-      <Footer />
+        <Products ref={products} />
+        <Service ref={services} />
+        <Solutions ref={solutions} />
+        <SunCollectors />
+        <Configure ref={configure} />
+        <Footer />
+      </LayoutGroup>
     </div>
   );
 }

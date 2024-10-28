@@ -2,15 +2,20 @@
 import React, { useState } from "react";
 import OutlineButton from "./Button";
 import Modal from "./Modal";
+import { motion } from "framer-motion";
+import { fadeIn } from "../Variants";
 
-export default function Header({ scrollToSection, products, solutions, services, configure }, ref) {
+export default function Header(
+  { scrollToSection, products, solutions, services, configure },
+  ref
+) {
   const navItems = [
     { label: "Products", ref: products },
     { label: "Solutions", ref: solutions },
     { label: "Services", ref: services },
     { label: "Configure", ref: configure },
   ];
-  
+
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -23,39 +28,53 @@ export default function Header({ scrollToSection, products, solutions, services,
 
   return (
     <header className="absolute top-0 left-0 w-full z-50">
-      <nav
-        className="mx-auto p-4 flex justify-between items-center"
-        aria-label="Main Navigation"
-      >
-        <div className="flex items-center lg:ml-20 md:ml-20">
-          <h1 className="text-black text-3xl font-bold mr-8">
-            <a href="#" aria-label="">
-              soller
-            </a>
-          </h1>
-          <ul className="flex items-center gap-x-7">
-            {navItems.map((item) => (
-              <li key={item.label} className="hidden lg:block">
-                <a
-                  href="#"
-                  className="text-[#0F172A] text-base font-medium hover:text-[#581C87]"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (item.ref.current) {
-                      scrollToSection(item.ref);
-                    } else {
-                      console.warn("Reference is null for:", item.label);
-                    }
-                  }}
+      <nav className="mx-auto p-4 flex justify-between items-center">
+        <motion.div
+          variants={fadeIn("right", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.7 }}
+        >
+          <div className="flex items-center lg:ml-20 md:ml-20">
+            <h1 className="text-black text-3xl font-bold mr-8">
+              <a href="#" aria-label="">
+                soller
+              </a>
+            </h1>
+            <ul className="flex items-center gap-x-7">
+              {navItems.map((item) => (
+                <li
+                  key={item.label}
+                  className="hidden lg:block relative text-base font-medium"
                 >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+                  <a
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (item.ref.current) {
+                        scrollToSection(item.ref);
+                      } else {
+                        console.warn("Reference is null for:", item.label);
+                      }
+                    }}
+                  >
+                    {item.label}
+                    <span className="line"></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
 
-        <div className="hidden lg:flex items-center gap-4 mr-20">
+        <motion.div
+          variants={fadeIn("left", 0.30)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.7 }}
+          className="hidden lg:flex items-center gap-4 mr-20"
+        >
           <div
             className="flex items-center gap-3 ml-6"
             aria-label="Contact Information"
@@ -69,7 +88,7 @@ export default function Header({ scrollToSection, products, solutions, services,
             onClick={handleOpenModal}
           />
           <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
-        </div>
+        </motion.div>
       </nav>
     </header>
   );

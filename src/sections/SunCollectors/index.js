@@ -2,6 +2,9 @@
 import React, { useRef, useState, forwardRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import OutlineButton from "../../components/Button";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../Variants";
+import Card from "../../components/Cards";
 
 const SunCollectors = forwardRef((props, ref) => {
   const carouselRef = useRef(null);
@@ -9,7 +12,7 @@ const SunCollectors = forwardRef((props, ref) => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  
+
   const Cards = [
     {
       id: 1,
@@ -76,13 +79,12 @@ const SunCollectors = forwardRef((props, ref) => {
     },
   ];
 
- 
   const loadMoreCards = () => {
-    const newCards = Cards.map(card => ({
+    const newCards = Cards.map((card) => ({
       ...card,
-      id: cards.length + card.id 
+      id: cards.length + card.id,
     }));
-    setCards(prevCards => [...prevCards, ...newCards]);
+    setCards((prevCards) => [...prevCards, ...newCards]);
   };
 
   useEffect(() => {
@@ -131,7 +133,6 @@ const SunCollectors = forwardRef((props, ref) => {
     setIsDragging(false);
   };
 
-  // Novas funções para eventos de toque
   const handleTouchStart = (e) => {
     setIsDragging(true);
     setStartX(e.touches[0].clientX - carouselRef.current.offsetLeft);
@@ -151,33 +152,62 @@ const SunCollectors = forwardRef((props, ref) => {
   };
 
   const showNextCard = () => {
-    carouselRef.current.scrollBy({ left: carouselRef.current.offsetWidth, behavior: "smooth" });
+    carouselRef.current.scrollBy({
+      left: carouselRef.current.offsetWidth,
+      behavior: "smooth",
+    });
   };
 
   const showPreviousCard = () => {
-    carouselRef.current.scrollBy({ left: -carouselRef.current.offsetWidth, behavior: "smooth" });
+    carouselRef.current.scrollBy({
+      left: -carouselRef.current.offsetWidth,
+      behavior: "smooth",
+    });
   };
 
   return (
     <main className="mx-auto bg-[#581C87] pb-14">
       <Helmet>
         <title>Make something awesome</title>
-        <meta name="description" content="Dui euismod iaculis libero, aliquet vitae et elementum porttitor..." />
+        <meta
+          name="description"
+          content="Dui euismod iaculis libero, aliquet vitae et elementum porttitor..."
+        />
       </Helmet>
 
       <section className="flex flex-col lg:flex-row justify-between items-center lg:mt-40 mt-20 px-4 pt-8 lg:mx-20 md:mx-20">
-        <div className="text-center lg:text-left lg:flex-1">
+        <motion.div
+          variants={fadeIn("right", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.7 }}
+          className="text-center lg:text-left lg:flex-1"
+        >
           <header>
-            <p className="text-lg sm:text-xl text-[#FCD34D] leading-9 font-medium mt-6 lg:mt-10">Join other Sun harvesters</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#FFFFFF] mt-4 mb-6">Make something awesome</h1>
+            <p className="text-lg sm:text-xl text-[#FCD34D] leading-9 font-medium mt-6 lg:mt-10">
+              Join other Sun harvesters
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#FFFFFF] mt-4 mb-6">
+              Make something awesome
+            </h1>
           </header>
           <article className="font-normal">
-            <p className="lg:text-xl md:text-xl text-base text-[#FFFFFF] max-w-[814px]">Dui euismod iaculis libero, aliquet vitae et elementum porttitor. Eleifend mi tristique condimentum congue fusce nunc, donec magnis commodo.</p>
+            <p className="text-xl text-[#FFFFFF] max-w-[814px]">
+              Dui euismod iaculis libero, aliquet vitae et elementum porttitor.
+              Eleifend mi tristique condimentum congue fusce nunc, donec magnis
+              commodo.
+            </p>
           </article>
-        </div>
-        <div className="mt-10 lg:mt-0 flex justify-center lg:justify-start lg:flex-none">
+        </motion.div>
+        <motion.div
+          variants={fadeIn("left", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.7 }}
+          className="mt-10 lg:mt-0 flex justify-center lg:justify-start lg:flex-none"
+        >
           <OutlineButton text="Request a Quote" variant="secondary" />
-        </div>
+        </motion.div>
       </section>
 
       <div
@@ -193,30 +223,39 @@ const SunCollectors = forwardRef((props, ref) => {
       >
         <div className="flex carousel-track lg:ml-20 md:ml-20">
           {cards.map(({ id, text, image, name, power }) => (
-            <article key={id} className="flex-shrink-0 p-4 card">
-              <div className="bg-white shadow-md rounded-lg p-6 max-w-[304px] h-96 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
-                <p className="text-center text-base mb-4 pt-16">{text}</p>
-                <div className="flex items-center mt-4">
-                  <img src={image} alt={`Imagem de ${name}`} className="mr-4" />
-                  <div>
-                    <h2 className="text-base font-semibold">{name}</h2>
-                    <p className="text-gray-500">{power}</p>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <Card
+              key={id}
+              text={text}
+              image={image}
+              name={name}
+              power={power}
+            />
           ))}
         </div>
       </div>
 
-      <div className="flex justify-center lg:justify-start mx-4 mt-4 space-x-4 pt-8 lg:mx-20 md:mx-20">
-        <button onClick={showPreviousCard} className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center nav-button" aria-label="Previous">
+      <motion.div
+        variants={fadeIn("right", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.7 }}
+        className="flex justify-center lg:justify-start mx-4 mt-4 space-x-4 pt-8 lg:mx-20 md:mx-20"
+      >
+        <button
+          onClick={showPreviousCard}
+          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center nav-button"
+          aria-label="Previous"
+        >
           <img src="Prev.png" alt="Previous" className="w-5 h-5" />
         </button>
-        <button onClick={showNextCard} className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center nav-button" aria-label="Next">
+        <button
+          onClick={showNextCard}
+          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center nav-button"
+          aria-label="Next"
+        >
           <img src="Next.png" alt="Next" className="w-5 h-5" />
         </button>
-      </div>
+      </motion.div>
     </main>
   );
 });
