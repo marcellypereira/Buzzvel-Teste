@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import OutlineButton from "./Button";
 import Modal from "./Modal";
 import { motion } from "framer-motion";
-import { fadeIn } from "../Variants";
+import { fadeIn } from "../Animations/variants";
 
 export default function Header(
   { scrollToSection, products, solutions, services, configure },

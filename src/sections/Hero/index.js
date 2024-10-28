@@ -2,7 +2,8 @@ import React, { forwardRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import OutlineButton from "../../components/Button";
-import { fadeIn } from "../../Variants"
+import { fadeIn } from "../../Animations/variants";
+import Reveal from '../../Animations/reveal';
 
 const Hero = forwardRef((props, ref) => {
   return (
@@ -15,10 +16,10 @@ const Hero = forwardRef((props, ref) => {
       <main className="grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-col lg:gap-8 md:grid-cols-2 md:grid-flow-col md:gap-8">
         
         <motion.section 
-          variants={fadeIn("down",0.30)}
+          variants={fadeIn("down", 0.30)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{once: true, amount: 0.7}}
+          viewport={{ once: true, amount: 0.7 }}
           className="lg:ml-20 md:ml-20 flex flex-col items-center lg:items-start md:items-start text-center lg:text-left lg:max-w-[717px] lg:pt-32 mt-8 md:text-left md:max-w-[600px] md:pt-12 px-4 order-2 lg:order-1 md:order-1" 
         >
           <h1 className="lg:text-7xl lg:font-extrabold md:font-extrabold font-bold leading-tight max-w-[343px] mx-auto text-[40px] md:text-4xl md:max-w-none text-[#0F172A]">
@@ -44,22 +45,18 @@ const Hero = forwardRef((props, ref) => {
             </figcaption>
           </figure>
         </motion.section>
-
-        <motion.aside
-          className="flex justify-end lg:mt-0 order-1 lg:order-2 md:order-2">
-          <div className="relative max-w-2xl w-full">
-            <motion.img 
-              src="Fundo.png" 
-              alt="Imagem de Fundo" 
-              className="absolute object-cover"
-            />
-            <motion.img 
-              src="image.png" 
-              alt="Imagem Solar" 
-              className="w-[673px] lg:max-w-full relative z-10 mt-4" 
-            />
-          </div>
-        </motion.aside>
+        
+        <aside className="flex justify-end lg:mt-0 order-1 lg:order-2 md:order-2">
+          <Reveal>
+            <div className=" max-w-2xl">
+              <img 
+                src="image.png" 
+                alt="Imagem Solar" 
+                className="w-[673px] lg:max-w-full relative z-10" 
+              />
+            </div>
+          </Reveal>
+        </aside>
       </main>
     </header>
   );

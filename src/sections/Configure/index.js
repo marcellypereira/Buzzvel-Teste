@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { Helmet } from "react-helmet";
 import OutlineButton from "../../components/Button";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../Variants";
+import { fadeIn } from "../../Animations/variants";
 
 const Configure = forwardRef((props, ref) => {
   return (
@@ -64,7 +64,13 @@ const Configure = forwardRef((props, ref) => {
           </motion.div>
         </div>
 
-        <div className="relative flex items-center justify-center">
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.7 }}
+          className="relative flex items-center justify-center"
+        >
           <figure className="lg:-mt-24 md:-mt-22 lg:mb-0 md:mb-0 -mb-44">
             <img
               src="Macbook.png"
@@ -72,7 +78,7 @@ const Configure = forwardRef((props, ref) => {
               className="pt-8 w-full object-cover"
             />
           </figure>
-        </div>
+        </motion.div>
 
         <figure className="md:hidden lg:hidden flex justify-start">
           <img src="Ellipse2.png" alt="Imagem decorativa" />

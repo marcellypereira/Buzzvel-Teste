@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../Variants";
+import { fadeIn } from "../../Animations/variants";
 
 const Service = forwardRef((props, ref) => {
   return (

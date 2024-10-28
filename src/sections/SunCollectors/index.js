@@ -3,7 +3,7 @@ import React, { useRef, useState, forwardRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import OutlineButton from "../../components/Button";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../Variants";
+import { fadeIn } from "../../Animations/variants";
 import Card from "../../components/Cards";
 
 const SunCollectors = forwardRef((props, ref) => {
@@ -221,7 +221,13 @@ const SunCollectors = forwardRef((props, ref) => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="flex carousel-track lg:ml-20 md:ml-20">
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.7 }}
+          className="flex carousel-track lg:ml-20 md:ml-20"
+        >
           {cards.map(({ id, text, image, name, power }) => (
             <Card
               key={id}
@@ -231,7 +237,7 @@ const SunCollectors = forwardRef((props, ref) => {
               power={power}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <motion.div
@@ -241,20 +247,24 @@ const SunCollectors = forwardRef((props, ref) => {
         viewport={{ once: true, amount: 0.7 }}
         className="flex justify-center lg:justify-start mx-4 mt-4 space-x-4 pt-8 lg:mx-20 md:mx-20"
       >
-        <button
+        <motion.button
           onClick={showPreviousCard}
-          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center nav-button"
+          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center transition-transform duration-300"
           aria-label="Previous"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
         >
           <img src="Prev.png" alt="Previous" className="w-5 h-5" />
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           onClick={showNextCard}
-          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center nav-button"
+          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center transition-transform duration-300"
           aria-label="Next"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
         >
           <img src="Next.png" alt="Next" className="w-5 h-5" />
-        </button>
+        </motion.button>
       </motion.div>
     </main>
   );
