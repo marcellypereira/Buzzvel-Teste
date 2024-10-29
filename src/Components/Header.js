@@ -5,7 +5,8 @@ import Modal from "./Modal";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Animations/Variants";
 import Vector from "../Assets/Vector.png"
-import SollerLogo from "../Assets/soller.png"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import SollerLogo from "../Assets/Soller.png"
 
 export default function Header(
   { scrollToSection, products, solutions, services, configure },
@@ -39,7 +40,7 @@ export default function Header(
         >
           <div className="flex items-center lg:ml-20 md:ml-20 ml-4 mt-4">
             <h1 className="text-black text-[32px] leading-[35.2px] font-bold mr-8">
-              <img src={SollerLogo} alt="" className="max-w-[81px] max-h-[36px]" />
+              <LazyLoadImage src={SollerLogo} alt="" className="max-w-[81px] max-h-[36px]" />
             </h1>
             <ul className="flex items-center gap-x-7">
               {navItems.map((item) => (
@@ -77,7 +78,7 @@ export default function Header(
           <div
             className="flex items-center gap-3 ml-6 "
           >
-            <img src={Vector} alt="Contact icon" className="w-[20px] h-[19px]" />
+            <LazyLoadImage src={Vector} alt="Contact icon" className="w-[20px] h-[19px]" />
             <p className="text-base text-[#0369A1] font-medium leading-6">55 818 282</p>
           </div>
           <OutlineButton
