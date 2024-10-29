@@ -1,6 +1,6 @@
 import React from 'react';
 
-const textStylesMap = {
+const text = {
   h1: `
     text-[32px] leading-[35.2px] font-bold mt-4 mb-6 
     md:text-[32px] md:leading-[40px] md:font-extrabold
@@ -30,7 +30,7 @@ const textStylesMap = {
 
 const Text = ({ children, variant = 'p', className = '' }) => {
   const Component = variant === 'h1' ? 'h1' : variant === 'h2' ? 'h2' : 'p';
-  const textStyles = `${textStylesMap[variant] || textStylesMap.p} ${className}`;
+  const textStyles = `${text[variant] || text.p} ${className}`;
 
   return <Component className={textStyles}>{children}</Component>;
 };
