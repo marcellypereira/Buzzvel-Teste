@@ -9,10 +9,10 @@ const OutlineButton = ({ text, variant = "primary", onClick }) => {
 
   return (
     <button
-      className={`flex items-center justify-center border-2 ${styles} font-bold leading-6 text-2xl transition duration-300 w-[306px] h-16 rounded-full hover:shadow-xl`}
+      className={`flex items-center justify-center border-2 ${styles} transition duration-300 w-[306px] h-16 rounded-full hover:shadow-xl`}
       onClick={onClick}
     >
-      <span className="text-center">{text}</span>
+      <span className="text-center text-2xl font-bold leading-6">{text}</span>
       <HiArrowRight className="ml-4 w-5 h-5" />
     </button>
   );

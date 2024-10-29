@@ -3,8 +3,10 @@ import React, { useRef, useState, forwardRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import OutlineButton from "../../components/Button";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../Animations/variants";
+import { fadeIn } from "../../Animations/Variants";
 import Card from "../../components/Cards";
+import Text from "../../components/Text";
+import Modal from "../../components/Modal";
 
 const SunCollectors = forwardRef((props, ref) => {
   const carouselRef = useRef(null);
@@ -165,6 +167,16 @@ const SunCollectors = forwardRef((props, ref) => {
     });
   };
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <main className="mx-auto bg-[#581C87] pb-14">
       <Helmet>
@@ -184,19 +196,25 @@ const SunCollectors = forwardRef((props, ref) => {
           className="text-center lg:text-left lg:flex-1"
         >
           <header>
-            <p className="text-lg sm:text-xl text-[#FCD34D] leading-9 font-medium mt-6 lg:mt-10">
+            <Text variant="p-medium" className="text-[#FCD34D]">
               Join other Sun harvesters
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#FFFFFF] mt-4 mb-6">
+            </Text>
+            <Text
+              variant="h1"
+              className="text-[#FFFFFF] lg:max-w-[814px] md:max-w-[814px] max-w-[343px] lg:mx-0 md:mx-0 mx-auto"
+            >
               Make something awesome
-            </h1>
+            </Text>
           </header>
           <article className="font-normal">
-            <p className="text-xl text-[#FFFFFF] max-w-[814px]">
+            <Text
+              variant="p-description"
+              className="text-[#FFFFFF] lg:max-w-[814px] md:max-w-[814px] max-w-[343px] lg:m-0 md:mx-auto mx-auto"
+            >
               Dui euismod iaculis libero, aliquet vitae et elementum porttitor.
               Eleifend mi tristique condimentum congue fusce nunc, donec magnis
               commodo.
-            </p>
+            </Text>
           </article>
         </motion.div>
         <motion.div
@@ -206,10 +224,14 @@ const SunCollectors = forwardRef((props, ref) => {
           viewport={{ once: true, amount: 0.7 }}
           className="mt-10 lg:mt-0 flex justify-center lg:justify-start lg:flex-none"
         >
-          <OutlineButton text="Request a Quote" variant="secondary" />
+          <OutlineButton
+            text="Request a Quote"
+            variant="secondary"
+            onClick={handleOpenModal}
+          />
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
         </motion.div>
       </section>
-
       <div
         className="relative overflow-hidden cursor-pointer mt-14"
         ref={carouselRef}
@@ -249,21 +271,21 @@ const SunCollectors = forwardRef((props, ref) => {
       >
         <motion.button
           onClick={showPreviousCard}
-          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center transition-transform duration-300"
+          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-12 h-12 flex items-center justify-center transition-transform duration-300"
           aria-label="Previous"
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="Prev.png" alt="Previous" className="w-5 h-5" />
+          <img src="Prev.png" alt="Previous" className="w-6 h-6" />
         </motion.button>
         <motion.button
           onClick={showNextCard}
-          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center transition-transform duration-300"
+          className="bg-gray-800 border-2 border-[#FCD34D] rounded-full w-12 h-12 flex items-center justify-center transition-transform duration-300"
           aria-label="Next"
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="Next.png" alt="Next" className="w-5 h-5" />
+          <img src="Next.png" alt="Next" className="w-6 h-6" />
         </motion.button>
       </motion.div>
     </main>

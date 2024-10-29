@@ -1,7 +1,8 @@
 import React, { forwardRef } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../Animations/variants";
+import { fadeIn } from "../../Animations/Variants";
+import Text from "../../components/Text";
 
 const Service = forwardRef((props, ref) => {
   return (
@@ -37,19 +38,26 @@ const Service = forwardRef((props, ref) => {
             viewport={{ once: true, amount: 0.7 }}
           >
             <header>
-              <p className="text-lg sm:text-xl text-[#D97706] leading-9 font-medium mt-6 lg:mt-10">
+              <Text
+                variant="p-medium"
+                className="text-[#D97706]"
+              >
                 Services
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#0F172A] mt-4 mb-6">
+              </Text>
+              <Text
+                variant="h1"
+                className="text-[#0F172A]">
                 Personalized Services
-              </h1>
+              </Text>
             </header>
 
             <article className="font-normal">
-              <p className="lg:text-xl md:text-xl text-base text-[#0F172A]">
+              <Text
+              variant="p-description"
+              className="text-[#0F172A] lg:max-w-[1180px] md:max-w-[1180px] max-w-[343px] lg:m-0 md:m-0	mx-auto">
                 Pretium lectus ultrices sit tempor, sit ullamcorper volutpat et
                 et. Auctor turpis semper id sit ornare maecenas lectus sed.
-              </p>
+              </Text>
             </article>
           </motion.div>
 
@@ -58,37 +66,53 @@ const Service = forwardRef((props, ref) => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.7 }}
-            className="grid grid-rows-2 grid-flow-col lg:gap-12 md:gap-12 gap-4 items-stretch mt-36"
+            className="grid grid-rows-2 grid-flow-col lg:gap-12 md:gap-12 gap-4 items-stretch mt-24"
           >
-            <article>
-              <h2 className="text-[#0F172A] text-2xl font-bold">Et mauris</h2>
-              <p className="text-[#0F172A] text-lg mt-4 font-normal">
+            <article className="lg:m-0 md:m-0	mx-auto">
+              <Text
+                variant="h2"
+                className="text-[#0F172A]">Et mauris</Text>
+              <Text
+                variant="p"
+                className="text-[#0F172A]">
                 Posuere quis sed mauris non curabitur pretium elementum eget.
                 Feugiat sed maecenas eu accumsan tristique.
-              </p>
+              </Text>
             </article>
-            <article className="mt-20 lg:mt-0 md:mt-0">
-              <h2 className="text-[#0F172A] text-2xl font-bold">
+            <article className="mt-16 lg:mt-6 md:mt-6 lg:mx-0 md:mx-0	mx-auto">
+              <Text
+                variant="h2"
+                className="text-[#0F172A]">
                 Imperdiet pellentesque
-              </h2>
-              <p className="text-[#0F172A] text-lg mt-4 font-normal">
+              </Text>
+              <Text
+                variant="p"
+                className="text-[#0F172A]">
                 Platea arcu dapibus non magna cursus lectus id sollicitudin.
                 Enim viverra parturient tristique nulla.
-              </p>
+              </Text>
             </article>
-            <article>
-              <h2 className="text-[#0F172A] text-2xl font-bold">Eget sit</h2>
-              <p className="text-[#0F172A] text-lg mt-4 font-normal">
+            <article className="lg:mx-0 md:mx-0	mx-auto">
+              <Text
+                variant="h2"
+                className="text-[#0F172A]">Eget sit</Text>
+              <Text
+                variant="p"
+                className="text-[#0F172A] ">
                 Sit bibendum donec dolor fames neque vulputate non sit aliquam.
                 Consequat turpis natoque leo, massa.
-              </p>
+              </Text>
             </article>
-            <article className="mt-20 lg:mt-0 md:mt-0">
-              <h2 className="text-[#0F172A] text-2xl font-bold">Non libero</h2>
-              <p className="text-[#0F172A] text-lg mt-4 font-normal">
+            <article className="mt-12 lg:mt-6 md:mt-6 lg:mx-0 md:mx-0	mx-auto">
+              <Text
+                variant="h2"
+                className="text-[#0F172A]">Non libero</Text>
+              <Text
+                variant="p"
+                className="text-[#0F172A]">
                 Congue mauris sem vel, urna viverra. Urna, nibh leo suscipit
                 purus ut sed eros, consectetur viverra.
-              </p>
+              </Text>
             </article>
           </motion.section>
         </div>

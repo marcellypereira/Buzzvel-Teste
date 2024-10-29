@@ -1,15 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef, Suspense, lazy } from "react";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
-import Products from "./sections/Products";
-import Service from "./sections/Services";
-import Solutions from "./sections/Solutions";
-import Configure from "./sections/Configure";
-import Hero from "./sections/Hero";
-import SunCollectors from "./sections/SunCollectors";
-import Footer from "./sections/Footer";
-import { LayoutGroup } from "framer-motion"
+import Loading from "./Animations/Loading";
+import { LayoutGroup } from "framer-motion";
+
+const Products = lazy(() => import("./sections/Products"));
+const Service = lazy(() => import("./sections/Services"));
+const Solutions = lazy(() => import("./sections/Solutions"));
+const Configure = lazy(() => import("./sections/Configure"));
+const Hero = lazy(() => import("./sections/Hero"));
+const SunCollectors = lazy(() => import("./sections/SunCollectors"));
+const Footer = lazy(() => import("./sections/Footer"));
 
 function App() {
   const products = useRef(null);
@@ -39,13 +41,15 @@ function App() {
         configure={configure}
       />
       <LayoutGroup>
-      <Hero />
-        <Products ref={products} />
-        <Service ref={services} />
-        <Solutions ref={solutions} />
-        <SunCollectors />
-        <Configure ref={configure} />
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Hero />
+          <Products ref={products} />
+          <Service ref={services} />
+          <Solutions ref={solutions} />
+          <SunCollectors />
+          <Configure ref={configure} />
+          <Footer />
+        </Suspense>
       </LayoutGroup>
     </div>
   );

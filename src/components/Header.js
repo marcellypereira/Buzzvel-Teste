@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import OutlineButton from "./Button";
 import Modal from "./Modal";
 import { motion } from "framer-motion";
-import { fadeIn } from "../Animations/variants";
+import { fadeIn } from "../Animations/Variants";
 
 export default function Header(
   { scrollToSection, products, solutions, services, configure },
@@ -35,21 +35,19 @@ export default function Header(
           whileInView={"show"}
           viewport={{ once: true, amount: 0.7 }}
         >
-          <div className="flex items-center lg:ml-20 md:ml-20">
-            <h1 className="text-black text-3xl font-bold mr-8">
-              <a href="#" aria-label="">
-                soller
-              </a>
+          <div className="flex items-center lg:ml-20 md:ml-20 ml-4 mt-4">
+            <h1 className="text-black text-[32px] leading-[35.2px] font-bold mr-8">
+              <img src="sollerLogo.png" alt="" className="max-w-[81px] max-h-[36px] " />
             </h1>
             <ul className="flex items-center gap-x-7">
               {navItems.map((item) => (
                 <li
                   key={item.label}
-                  className="hidden lg:block relative text-base font-medium"
+                  className="hidden lg:block relative text-base font-medium leading-6"
                 >
                   <a
                     href="#"
-                    className="nav-link"
+                    className="relative text-black after:absolute after:bottom-[-5px] after:left-0 after:right-0 after:h-[1px] after:bg-[#0F172A] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100 hover:after:origin-left"
                     onClick={(e) => {
                       e.preventDefault();
                       if (item.ref.current) {
@@ -60,7 +58,6 @@ export default function Header(
                     }}
                   >
                     {item.label}
-                    <span className="line"></span>
                   </a>
                 </li>
               ))}
@@ -76,11 +73,10 @@ export default function Header(
           className="hidden lg:flex items-center gap-4 mr-20"
         >
           <div
-            className="flex items-center gap-3 ml-6"
-            aria-label="Contact Information"
+            className="flex items-center gap-3 ml-6 "
           >
-            <img src="Vector.png" alt="Contact icon" />
-            <p className="text-base text-[#0369A1]">55 818 282</p>
+            <img src="Vector.png" alt="Contact icon" className="w-[20px] h-[19px]" />
+            <p className="text-base text-[#0369A1] font-medium leading-6">55 818 282</p>
           </div>
           <OutlineButton
             text="Request a Quote"

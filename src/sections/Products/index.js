@@ -2,7 +2,8 @@
 import React, { forwardRef } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../Animations/variants";
+import { fadeIn } from "../../Animations/Variants";
+import Text from "../../components/Text";
 
 const Products = forwardRef((props, ref) => {
   return (
@@ -22,18 +23,18 @@ const Products = forwardRef((props, ref) => {
         viewport={{ once: true, amount: 0.7 }}
         className="mt-20 lg:mt-40 text-center px-4"
       >
-        <p className="text-lg sm:text-xl text-[#D97706] leading-9 font-medium mt-6 lg:mt-10 md:mt-10">
+        <Text variant="p-medium" className="text-[#D97706] lg:mt-0 md:mt-0 mt-32">
           No more waste
-        </p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl lg:font-extrabold md:font-extrabold font-bold text-[#0F172A] mt-4 mb-6">
+        </Text>
+        <Text variant="h1" className="text-[#0F172A] mt-4 mb-6 text-center">
           Pick the Sun
-        </h1>
+        </Text>
         <article className="lg:max-w-[900px] lg:mx-auto mx-6 font-normal">
-          <p className="lg:text-xl md:text-xl text-base">
+          <Text variant="p-description" className="text-[#0F172A] text-center lg:max-w-[900px] md:max-w-[814px] max-w-[343px] lg:m-0 md:m-auto mx-auto">
             Et pulvinar nec interdum integer id urna molestie porta nullam. A,
             donec ornare sed turpis pulvinar purus maecenas quam a. Erat
             porttitor pharetra sed in mauris elementum sollicitudin.
-          </p>
+          </Text>
         </article>
       </motion.section>
 
