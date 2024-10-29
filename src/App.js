@@ -1,17 +1,17 @@
 import React, { useRef, Suspense, lazy } from "react";
 import "./App.css";
-import ScrollToTop from "./components/ScrollToTop";
-import Header from "./components/Header";
+import ScrollToTop from "./Components/ScrollToTop";
+import Header from "./Components/Header";
 import Loading from "./Animations/Loading";
 import { LayoutGroup } from "framer-motion";
 
-const Products = lazy(() => import("./sections/Products"));
-const Service = lazy(() => import("./sections/Services"));
-const Solutions = lazy(() => import("./sections/Solutions"));
-const Configure = lazy(() => import("./sections/Configure"));
-const Hero = lazy(() => import("./sections/Hero"));
-const SunCollectors = lazy(() => import("./sections/SunCollectors"));
-const Footer = lazy(() => import("./sections/Footer"));
+const Products = lazy(() => import("./Sections/Products"));
+const Service = lazy(() => import("./Sections/Services"));
+const Solutions = lazy(() => import("./Sections/Solutions"));
+const Configure = lazy(() => import("./Sections/Configure"));
+const Hero = lazy(() => import("./Sections/Hero"));
+const SunCollectors = lazy(() => import("./Sections/SunCollectors"));
+const Footer = lazy(() => import("./Sections/Footer"));
 
 function App() {
   const products = useRef(null);

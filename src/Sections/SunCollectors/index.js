@@ -1,12 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useState, forwardRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import OutlineButton from "../../components/Button";
+import OutlineButton from "../../Components/Button";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../Animations/Variants";
-import Card from "../../components/Cards";
-import Text from "../../components/Text";
-import Modal from "../../components/Modal";
+import Card from "../../Components/Cards";
+import { Title, SubTitle, Description } from "../../Components/Text";
+import Modal from "../../Components/Modal";
+import Next from "../../Assets/Next.png";
+import Prev from "../../Assets/Prev.png";
+import User1 from "../../Assets/User1.png";
+import User2 from "../../Assets/User2.png";
+import User3 from "../../Assets/User3.png";
+import User4 from "../../Assets/User4.png";
 
 const SunCollectors = forwardRef((props, ref) => {
   const carouselRef = useRef(null);
@@ -19,63 +25,63 @@ const SunCollectors = forwardRef((props, ref) => {
     {
       id: 1,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User2.png",
+      image: User2,
       name: "Jane Cooper",
       power: "10KWh",
     },
     {
       id: 2,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User3.png",
+      image: User3,
       name: "John Doe",
       power: "15KWh",
     },
     {
       id: 3,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User1.png",
+      image: User1,
       name: "Alice Smith",
       power: "12KWh",
     },
     {
       id: 4,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User2.png",
+      image: User2,
       name: "Michael Johnson",
       power: "20KWh",
     },
     {
       id: 5,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User3.png",
+      image: User3,
       name: "Emma Brown",
       power: "8KWh",
     },
     {
       id: 6,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User4.png",
+      image: User4,
       name: "Lucas White",
       power: "18KWh",
     },
     {
       id: 7,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User1.png",
+      image: User1,
       name: "Olivia Green",
       power: "9KWh",
     },
     {
       id: 8,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User2.png",
+      image: User2,
       name: "Sophia Blue",
       power: "11KWh",
     },
     {
       id: 9,
       text: "Purus maecenas quis elit eu, aliquet. Tellus porttitor ut sollicitudin sit non fringilla. Quam nunc volutpat senectus neque eget amet pharetra, euismod. Tempus, nunc, molestie imperdiet curabitur commodo euismod.",
-      image: "User3.png",
+      image: User3,
       name: "Liam Gray",
       power: "14KWh",
     },
@@ -196,25 +202,20 @@ const SunCollectors = forwardRef((props, ref) => {
           className="text-center lg:text-left lg:flex-1"
         >
           <header>
-            <Text variant="p-medium" className="text-[#FCD34D]">
-              Join other Sun harvesters
-            </Text>
-            <Text
-              variant="h1"
+            <SubTitle
+              text="Join other Sun harvesters"
+              className="text-[#FCD34D]"
+            />
+            <Title
+              text="Make something awesome"
               className="text-[#FFFFFF] lg:max-w-[814px] md:max-w-[814px] max-w-[343px] lg:mx-0 md:mx-0 mx-auto"
-            >
-              Make something awesome
-            </Text>
+            />
           </header>
           <article className="font-normal">
-            <Text
-              variant="p-description"
+            <Description
+              text="Dui euismod iaculis libero, aliquet vitae et elementum porttitor. Eleifend mi tristique condimentum congue fusce nunc, donec magnis commodo."
               className="text-[#FFFFFF] lg:max-w-[814px] md:max-w-[814px] max-w-[343px] lg:m-0 md:mx-auto mx-auto"
-            >
-              Dui euismod iaculis libero, aliquet vitae et elementum porttitor.
-              Eleifend mi tristique condimentum congue fusce nunc, donec magnis
-              commodo.
-            </Text>
+            />
           </article>
         </motion.div>
         <motion.div
@@ -276,7 +277,7 @@ const SunCollectors = forwardRef((props, ref) => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="Prev.png" alt="Previous" className="w-6 h-6" />
+          <img src={Prev} alt="Previous" className="w-6 h-6" />
         </motion.button>
         <motion.button
           onClick={showNextCard}
@@ -285,7 +286,7 @@ const SunCollectors = forwardRef((props, ref) => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="Next.png" alt="Next" className="w-6 h-6" />
+          <img src={Next} alt="Next" className="w-6 h-6" />
         </motion.button>
       </motion.div>
     </main>

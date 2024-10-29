@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
+import Fundo from "../Assets/Fundo.png"
 
 const Reveal = ({ children }) => {
   const ref = useRef(null);
@@ -48,7 +49,7 @@ const Reveal = ({ children }) => {
         }}
       >
         <img 
-          src="/Fundo.png" 
+          src={Fundo} 
           alt="Fundo" 
           className="w-[673px] h-auto object-cover"
         />

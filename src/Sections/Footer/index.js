@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+import Logo from "../../Assets/Logo.png"
 
 const Footer = forwardRef((props, ref) => {
   return (
@@ -6,7 +7,7 @@ const Footer = forwardRef((props, ref) => {
       <section className="flex flex-col md:flex-row justify-between items-center py-8 text-center md:text-left">
         
         <figure className="flex flex-col md:flex-row items-center md:items-center gap-4 mb-4 md:mb-0">
-          <img src="Logo.png" alt="Logo da Soller" />
+          <img src={Logo} alt="Logo da Soller" />
           <figcaption className="text-[#0F172A] text-base leading-[22.4px] font-normal">
             @ 2023 Soller, Inc. All rights reserved.
           </figcaption>
