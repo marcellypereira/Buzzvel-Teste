@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Buzzvel 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :book: Sobre o projeto
 
-## Available Scripts
+O design foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.com/design/Fa2T97nxAiGFUvDZqnm9TM/Buzzvel-FE---Test-2024?node-id=0-1&node-type=canvas&t=1WZWVfPTVr34WMbQ-0).
 
-In the project directory, you can run:
+## :computer: Tecnologias
 
-### `npm start`
+- [React](https://legacy.reactjs.org/docs/create-a-new-react-app.html)
+- [Tailwind CSS](https://tailwindcss.com/docs/width)
+- [Framer Motion](https://www.framer.com/motion/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :sparkles: Funcionalidades Adicionais
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Otimização de Desempenho: Implementação de lazy loading para imagens e componentes, permitindo que apenas os elementos visíveis na tela sejam carregados inicialmente. Isso resultou em tempos de carregamento mais rápidos e uma experiência de usuário mais responsiva, especialmente em dispositivos móveis.
+- Implementação de SEO Eficiente: Utilização de tags HTML semânticas e integração de meta tags com react-helmet, melhorando a indexação nos motores de busca e garantindo que a aplicação fosse facilmente encontrável. Essa abordagem ajudou a aumentar a visibilidade da aplicação e a atrair mais visitantes.
+- Animações Atraentes: Integração de Framer Motion para criar animações suaves de transição e efeitos de entrada. Isso melhorou a interatividade da aplicação, proporcionando uma experiência mais envolvente e agradável para o usuário ao navegar entre diferentes seções.
 
-### `npm test`
+## :rocket: Como Rodar o Projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório para sua máquina local.
+2. Navegue até a pasta do projeto utilizando o terminal.
+3. Verifique se está utilizando a última versão do Node.js.
+4. Execute o comando npm install para instalar as dependências necessárias.
+5. Por fim, inicie o servidor de desenvolvimento executando o comando `npm start`.
 
-### `npm run build`
+![ramegoo](https://github.com/user-attachments/assets/459c01ac-40be-4a7d-8adb-2698e84c7670)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div align="center">Feito com 💜!</div>
