@@ -75,7 +75,7 @@ const Hero = forwardRef((props, ref) => {
         <aside className="flex justify-end lg:mt-0 order-1 lg:order-2 md:order-2">
           <Reveal>
             <div className=" max-w-2xl">
-              <LazyLoadImage
+              <img
                 src={ImageSolar}
                 alt="Imagem Solar"
                 className="max-w-[307.31px] md:max-w-full lg:max-w-full relative z-10"
