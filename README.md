@@ -21,7 +21,7 @@ O design foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.c
 1. Clone o repositório para sua máquina local.
 2. Navegue até a pasta do projeto utilizando o terminal.
 3. Verifique se está utilizando a última versão do Node.js.
-4. Execute o comando npm install para instalar as dependências necessárias.
+4. Execute o comando `npm install` para instalar as dependências necessárias.
 5. Por fim, inicie o servidor de desenvolvimento executando o comando `npm start`.
 
 ![buzzvel](https://github.com/user-attachments/assets/4d327438-7566-4bd1-8c39-7ed0e2852b9f)
