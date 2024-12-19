@@ -24,6 +24,10 @@ O design foi criado no Figma, e você pode conferi-lo [aqui](https://www.figma.c
 4. Execute o comando `npm install` para instalar as dependências necessárias.
 5. Por fim, inicie o servidor de desenvolvimento executando o comando `npm start`.
 
-![buzzvel](https://github.com/user-attachments/assets/4d327438-7566-4bd1-8c39-7ed0e2852b9f)
+## :computer: Visualização Desktop
+![desktop](https://github.com/user-attachments/assets/31f97882-2c1f-4e8c-aee0-8639ed34a416)
+
+## :iphone: Visualização Mobile
+![mobile](https://github.com/user-attachments/assets/4d99026f-2aa7-4979-948f-ccf44490336c)
 
 <div align="center">Feito com 💜!</div>
